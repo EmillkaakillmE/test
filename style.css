@@ -1,0 +1,323 @@
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+*, *:after, *:before {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+*:active, *:focus {
+  outline: none;
+}
+
+a:active, a:focus {
+  outline: none;
+}
+
+aside, footer, header, nav {
+  display: block;
+}
+
+body, html {
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  line-height: 1;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+button, input, textarea {
+  font-family: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+button {
+  cursor: pointer;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a, a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: inherit;
+  font-weight: 400;
+}
+
+input[type=date]::-webkit-calendar-picker-indicator {
+  opacity: 0;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+select, input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+body {
+  font-family: Roboto, serif;
+  font-weight: 400;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+main {
+  flex: auto 1 0;
+  margin: 0 0 58px 0;
+  min-height: 100vh;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+.header {
+  background-color: #1f2229;
+  margin-bottom: 40px;
+}
+.header .container.container-wide {
+  max-width: 1142px;
+}
+.header__wrapper {
+  padding: 10px 0;
+}
+.header .logo {
+  display: flex;
+  align-items: center;
+  column-gap: 20px;
+}
+.header .logo__img {
+  max-width: 87px;
+}
+.header .logo__img img {
+  width: 100%;
+}
+.header .logo__label span {
+  color: #ffffff;
+}
+
+main .container {
+  max-width: 800px;
+}
+main .form {
+  margin-bottom: 47px;
+}
+main .form__titles {
+  text-align: center;
+  margin-bottom: 72px;
+}
+main .form__big-title {
+  margin-bottom: 30px;
+}
+main .form__big-title span {
+  font-size: 36px;
+}
+main .form__small-title span {
+  font-size: 12px;
+}
+main .form__row {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+@media (max-width: 512px) {
+  main .form__row:nth-last-child(2) {
+    margin-bottom: 15px;
+  }
+}
+main .form label {
+  margin: 20px 0;
+  position: relative;
+  display: inline-block;
+}
+main .form label .input-placeholder {
+  padding: 10px;
+  pointer-events: none;
+  font-size: 12px;
+  position: absolute;
+  left: 0;
+  top: 20%;
+  transition: all 0.2s ease 0s;
+  opacity: 1;
+}
+main .form label input:focus ~ span.input-placeholder {
+  opacity: 1;
+  top: 0;
+  transform: scale(0.75) translateY(-30%) translateX(-20px);
+}
+main .form label input:not(:focus) ~ span.input-placeholder {
+  transition: all 0.2s ease 0.5s;
+}
+main .form label input:not([value=""]) ~ span.input-placeholder {
+  opacity: 1;
+  top: 0;
+  transform: scale(0.75) translateY(-30%) translateX(-20px);
+}
+main .form input:not([type=checkbox]) {
+  min-width: 242px;
+  min-height: 52px;
+  border: 1px solid #000000;
+  padding: 13px 13px 4px;
+}
+main .form select {
+  background: none;
+  padding: 15.6px 8px;
+  border: 1px solid rgba(0, 0, 0, 0.61);
+  transition: all 0.4s ease 0s;
+  font-family: inherit;
+  font-size: 1rem;
+}
+main .form input {
+  transition: all 0.4s ease 0s;
+}
+main .form input.error, main .form input.error ~ select {
+  border: 1px solid #FF5A5F;
+}
+main .form input.success, main .form input.success ~ select {
+  border: 1px solid #33C4A0;
+}
+main .form .input-error {
+  position: absolute;
+  font-size: 10px;
+  bottom: -20px;
+  left: 10px;
+  color: #FF5A5F;
+}
+main .form .year-month {
+  position: absolute;
+  right: 0;
+}
+main .form .input-date {
+  caret-color: transparent;
+}
+main .form .checkbox {
+  position: relative;
+}
+main .form .checkbox__input {
+  position: absolute;
+}
+main .form .checkbox__label {
+  padding-left: 25px;
+  font-size: 14px;
+}
+main .form .checkbox__label::before {
+  content: "";
+  display: block;
+  width: 16px;
+  height: 16px;
+  border: 1px solid #000;
+  background-color: #fff;
+  position: absolute;
+  top: -2px;
+  left: 0;
+  z-index: 1;
+}
+main .form .checkbox__label::after {
+  content: "";
+  opacity: 0;
+  display: block;
+  width: 16px;
+  height: 16px;
+  transition: all 0.4s ease 0s;
+  background: url("img/check.svg") no-repeat;
+  -webkit-background-size: 16px 16px;
+  background-size: 16px 16px;
+  position: absolute;
+  top: -2px;
+  left: 0;
+  z-index: 2;
+}
+main .form .checkbox__label.active::after {
+  opacity: 1;
+}
+main .form .submit {
+  text-align: left;
+  margin-left: 65px;
+  justify-content: start;
+}
+main .form .submit button {
+  min-width: 172px;
+  min-height: 52px;
+  background-color: #33C4A0;
+  border: 1px solid #33C4A0;
+}
+main .form .submit button span {
+  font-weight: 500;
+  color: #FFFFFF;
+}
+main .container_small {
+  width: 82%;
+  margin: 0 auto;
+}
+main .separator {
+  width: 100%;
+  height: 1px;
+  border: 1px solid rgba(0, 0, 0, 0.61);
+  margin-bottom: 15px;
+}
+main .result {
+  padding: 0 10px;
+}
+main .result__title {
+  font-size: 12px;
+  font-family: "Arial Unicode MS", serif;
+  margin-bottom: 15px;
+}
+main .result__sum, main .result__sum2 {
+  padding: 0 10px;
+  font-weight: 700;
+}
+@media (max-width: 400px) {
+  main .result__sum, main .result__sum2 {
+    font-size: 13px;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
